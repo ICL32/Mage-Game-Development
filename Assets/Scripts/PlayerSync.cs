@@ -5,19 +5,27 @@ using Mirror;
 using Steamworks;
 public class PlayerSync : NetworkBehaviour
 {
-    public CharacterController controller;
+    [SerializeField]
+    private CharacterController Controller;
+    [SerializeField]
+    public GameObject playerCamera;
     // Start is called before the first frame update
     void Start()
     {
 
-        if (!isLocalPlayer);
+        if (!hasAuthority)
         {
-            Destroy(GetComponent<CharacterController>());
-            Destroy(GetComponent<CastScript>());
-            Destroy(GetComponent<MouseLook>());
-            Debug.LogError("This isn't the server's player");
+            Destroy(Controller);
+            gameObject.GetComponent<CastScript>().enabled = false;
+            gameObject.GetComponent<PlayerMovement>().enabled = false;
+            gameObject.GetComponent<MouseLook>().enabled = false;
+            playerCamera.SetActive(false);
+            Debug.LogError("This isn't the client's player");
+            
         }
         return;
+
+       
     }
 
     // Update is called once per frame

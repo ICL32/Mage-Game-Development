@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Mirror;
 
 public class CastScript : MonoBehaviour
 {
@@ -53,6 +54,8 @@ public class CastScript : MonoBehaviour
         if (ammunitionDisplay != null)
             ammunitionDisplay.SetText(bulletsLeft / bulletsPerTap + " / " + magazineSize / bulletsPerTap);
     }
+
+    [Command]
     private void MyInput()
     {
         //Check if allowed to hold down button and take corresponding input
