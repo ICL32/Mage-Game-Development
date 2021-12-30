@@ -41,11 +41,12 @@ public void HostLobby()
     void Start()
 
     {
-        Debug.LogError("Start Method in NetworkManager");
+        
 
         networkManager = GetComponent<NetworkManager>();
 
-        if (!SteamManager.Initialized) { Debug.Log("Steam Manager not initialized"); return; }
+        if (!SteamManager.Initialized)
+        { Debug.Log("Steam Manager not initialized"); return; }
 
         lobbyCreated = Callback<LobbyCreated_t>.Create(OnLobbyCreated);
 
