@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 9158499920187694826}
   - component: {fileID: 3737914483235498365}
   - component: {fileID: 7418283167681498235}
+  - component: {fileID: 6804013972031462630}
   m_Layer: 0
   m_Name: First Person Player
   m_TagString: Untagged
@@ -80,7 +81,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 9158499920187694826}
-  speed: 20
+  speed: 15
   gravity: -9.81
 --- !u!143 &9158499920187694826
 CharacterController:
@@ -131,14 +132,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  clientAuthority: 0
-  sendInterval: 0.05
+  clientAuthority: 1
+  sendInterval: 1
   syncPosition: 1
   syncRotation: 1
-  syncScale: 0
+  syncScale: 1
   interpolatePosition: 1
   interpolateRotation: 1
-  interpolateScale: 0
+  interpolateScale: 1
   bufferTimeMultiplier: 1
   bufferSizeLimit: 64
   catchupThreshold: 4
@@ -146,6 +147,36 @@ MonoBehaviour:
   showGizmos: 0
   showOverlay: 0
   overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+--- !u!114 &6804013972031462630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9158499920187694824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57e5475971afd1a4e8428dea2b91b5c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 836183315463306453, guid: 3eff5f097428cdc4bbe28758cde25598, type: 3}
+  shootForce: 30
+  upwardForce: 0
+  timeBetweenShooting: 2
+  spread: 1
+  reloadTime: 2
+  timeBetweenShots: 2
+  magazineSize: 99
+  bulletsPerTap: 1
+  allowButtonHold: 0
+  TimeDestroy: 5
+  playerRb: {fileID: 0}
+  recoilForce: 0
+  fpsCam: {fileID: 9158499920518968977}
+  attackPoint: {fileID: 9158499919088822221}
+  muzzleFlash: {fileID: 0}
+  ammunitionDisplay: {fileID: 0}
+  allowInvoke: 1
 --- !u!1 &9158499920518968972
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +188,7 @@ GameObject:
   - component: {fileID: 9158499920518968975}
   - component: {fileID: 9158499920518968977}
   - component: {fileID: 9158499920518968974}
-  - component: {fileID: 9158499920518968976}
+  - component: {fileID: 3848734192556353442}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -230,7 +261,7 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9158499920518968972}
   m_Enabled: 1
---- !u!114 &9158499920518968976
+--- !u!114 &3848734192556353442
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -242,8 +273,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e41920b476754454ba7fa880d8f88785, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mouseSensitivity: 10
   playerBody: {fileID: 9158499920187694827}
-  mouseSensitivity: 200
 --- !u!1001 &9158499920190061841
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -301,46 +332,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60405359a949e7b44aa693333e650fd9, type: 3}
---- !u!1 &8347684652719407168 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 60405359a949e7b44aa693333e650fd9, type: 3}
-  m_PrefabInstance: {fileID: 9158499920190061841}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8688356663148829434 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 60405359a949e7b44aa693333e650fd9, type: 3}
   m_PrefabInstance: {fileID: 9158499920190061841}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9158499920190061842
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8347684652719407168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57e5475971afd1a4e8428dea2b91b5c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 836183315463306453, guid: 3eff5f097428cdc4bbe28758cde25598, type: 3}
-  shootForce: 25
-  upwardForce: 0
-  timeBetweenShooting: 2
-  spread: 2
-  reloadTime: 1
-  timeBetweenShots: 2
-  magazineSize: 50
-  bulletsPerTap: 1
-  allowButtonHold: 0
-  TimeDestroy: 5
-  playerRb: {fileID: 0}
-  recoilForce: 0
-  fpsCam: {fileID: 9158499920518968977}
-  attackPoint: {fileID: 9158499919088822221}
-  muzzleFlash: {fileID: 0}
-  ammunitionDisplay: {fileID: 0}
-  allowInvoke: 1
 --- !u!1001 &9158499920690608824
 PrefabInstance:
   m_ObjectHideFlags: 0

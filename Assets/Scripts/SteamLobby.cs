@@ -7,6 +7,7 @@ using UnityEngine;
 using Steamworks;
 
 using Mirror;
+using UnityEngine.UI;
 
 public class SteamLobby : MonoBehaviour
 
@@ -25,8 +26,6 @@ public class SteamLobby : MonoBehaviour
     [SerializeField]
     private GameObject buttons;
 
-
-
 public void HostLobby()
 
     {
@@ -42,14 +41,11 @@ public void HostLobby()
     void Start()
 
     {
+        Debug.LogError("Start Method in NetworkManager");
 
         networkManager = GetComponent<NetworkManager>();
 
-        if (!SteamManager.Initialized) { Debug.LogError("Not Intialized, Returning"); return; } 
-        else
-        {
-            Debug.LogError("Steam Manager was Initialized");
-        }
+        if (!SteamManager.Initialized) { Debug.Log("Steam Manager not initialized"); return; }
 
         lobbyCreated = Callback<LobbyCreated_t>.Create(OnLobbyCreated);
 
@@ -69,14 +65,10 @@ public void HostLobby()
 
             buttons.SetActive(true);
 
-            Debug.LogError("Not Created!");
+            Debug.LogError("Failed to Create Lobby");
 
             return;
 
-        }
-        else
-        {
-            Debug.LogError("Lobby Created!");
         }
 
         networkManager.StartHost();
@@ -105,6 +97,7 @@ public void HostLobby()
 
         networkManager.StartClient();
 
+        Debug.LogError(hostAddress);
     }
 
 }
