@@ -13,12 +13,13 @@ public class PlayerSync : NetworkBehaviour
     void Start()
     {
 
-        if (!hasAuthority)
+        if (!isLocalPlayer)
         {
             Destroy(Controller);
             gameObject.GetComponent<CastScript>().enabled = false;
             gameObject.GetComponent<PlayerMovement>().enabled = false;
             gameObject.GetComponent<MouseLook>().enabled = false;
+            gameObject.GetComponent<AudioListener>().enabled = false;
             playerCamera.SetActive(false);
             Debug.LogError("This isn't the client's player");
             
