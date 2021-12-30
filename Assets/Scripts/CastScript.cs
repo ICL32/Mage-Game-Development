@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using Mirror;
 
-public class CastScript : MonoBehaviour
+public class CastScript : NetworkBehaviour
 {
     //bullet 
     public GameObject bullet;
