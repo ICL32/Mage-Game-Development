@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6885155634977080671}
   - component: {fileID: 9083062382818007797}
   - component: {fileID: -1219501072405589817}
-  - component: {fileID: -581477155895958870}
+  - component: {fileID: 7692244314788304097}
   m_Layer: 0
   m_Name: Fireball 1
   m_TagString: Untagged
@@ -124,7 +124,7 @@ MonoBehaviour:
   visible: 0
   m_AssetId: 3eff5f097428cdc4bbe28758cde25598
   hasSpawned: 0
---- !u!114 &-581477155895958870
+--- !u!114 &7692244314788304097
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5034,7 +5034,7 @@ ParticleSystem:
   lengthInSec: 5
   simulationSpeed: 0
   stopAction: 0
-  cullingMode: 0
+  cullingMode: 3
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
@@ -5591,7 +5591,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 500
     size3D: 0
     rotation3D: 0
     gravityModifier:

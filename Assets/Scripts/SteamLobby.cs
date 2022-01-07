@@ -21,7 +21,9 @@ public class SteamLobby : MonoBehaviour
 
     private NetworkManager networkManager;
 
+
     private const string HostAddressKey = "HostAddress";
+
 
     [SerializeField]
     private GameObject buttons;
@@ -75,6 +77,7 @@ public void HostLobby()
         networkManager.StartHost();
 
         SteamMatchmaking.SetLobbyData(new CSteamID(callback.m_ulSteamIDLobby), HostAddressKey, SteamUser.GetSteamID().ToString());
+     
 
     }
 
@@ -99,6 +102,21 @@ public void HostLobby()
         networkManager.StartClient();
 
         Debug.LogError(hostAddress);
+
+       
+
+
+    }
+   
+    void Update()
+    {
+        if (!NetworkClient.ready && !NetworkClient.isLoadingScene && NetworkClient.isConnected)
+        {
+            NetworkClient.Ready();//Marks Client as ready making Client available to recieve [Command] messages.
+
+            Debug.LogError(NetworkClient.ready);
+        }
+
     }
 
 }
