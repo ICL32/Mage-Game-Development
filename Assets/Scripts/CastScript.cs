@@ -4,11 +4,12 @@ using UnityEngine;
 using TMPro;
 using Mirror;
 
+
 public class CastScript : NetworkBehaviour
 {
     //projectile 
     public GameObject bullet;
-
+    public ParticleSystem castEffect;
     //projectile force
     [SerializeField] [SyncVar]   
     private float shootForce = 30f;
@@ -105,16 +106,18 @@ public class CastScript : NetworkBehaviour
         if (readyToCast)
         {
             Cast();
+            
         }
         else
         {
-                Debug.LogError("Not ready to cast: " + casting + readyToCast);
+                Debug.LogError("Not ready to cast: Casting - " + casting + ", Ready to Cast: - " + readyToCast);
         }
     }
 
     [ClientRpc]
     private void Cast()
     {
+        
         Debug.Log("Casting");
         readyToCast = false;
 

@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5398781355280206236
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 4
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Fire
+  m_Shader: {fileID: -6465566751694194690, guid: a9faf2627adc2f04b9a97aa8f55fbfef, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_db5e352e96e94246b679f6851dc59fc6:
+        m_Texture: {fileID: 2800000, guid: bcc8fc05f1f924531a65f39394c0b703, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_6968264fd3be48068b21ddc7cea9bc38: 0.05
+    - Vector1_7482eea5dc5145e691cb5f8cfa07e842: 0
+    - Vector1_b09fedb035f946e9a48bc4bb7ea7d1e8: 2.46
+    - Vector1_b422bbb22912433c90509af26e45f2b5: 0.53
+    - Vector1_e8e345f320d441109313c6989ef1abab: 0
+    - Vector1_eabda4ea7b4f478185a75815295d6eca: 1.8
+    - Vector1_f1124ca52764417081e33f3c59594c9d: 28.5
+    m_Colors:
+    - Color_182450f654194a66b672db32cdf13c1d: {r: 16.94838, g: 4.880423, b: 0, a: 1}
+    - Color_363ddbc94129414b820956dca1ebef4a: {r: 0.6886792, g: 0.2212508, b: 0, a: 0}
+    - Color_c7eece8b67574c0baf8de1a23d15127d: {r: 0.62264144, g: 0.26318914, b: 0.02055893, a: 0}
+    - Vector2_9119e37d2c6b4d2b8f31b98db3d84339: {r: 0, g: 0, b: 0, a: 0}
+    - Vector2_fcd90c00ad2042508a6e486e4c1605d3: {r: 2, g: 1, b: 0, a: 0}
+  m_BuildTextureStacks: []
